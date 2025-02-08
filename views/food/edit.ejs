@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Food</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Cookbook</a>
+    <a href="/auth/signout">Sign out</a>
+  </nav>
+
+  <h1>Edit Food</h1>
+
+  <form action="/users/<%= userId %>/foods/<%= food._id %>?_method=PUT" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="<%= food.name %>">
+
+
+    <label for="quantity">Quantity</label>
+    <input type="number" name="quantity" id="quantity" value="<%= food.quantity %>">
+
+    <button type="submit">Edit Food</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookbook</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Cookbook</a>
+    <a href="/auth/signout">Sign out</a>
+  </nav>
+
+  <h1>Welcome, <%= user.username %>! This is your Cookbook</h1>
+
+  <h2>List of foods in the pantry</h2>
+
+  <% if (user.pantry.length > 0) { %>
+    <ul>
+      <% user.pantry.forEach(food => { %>
+        <li><a href="/users/<%= user._id %>/foods/<%= food._id %>"><%= food.name %> - <%= food.quantity %></a></li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No foods in the pantry</p>
+  <% } %>
+  
+  <a href="/users/<%= user._id %>/foods/new">Add food to pantry</a>
+</body>
+</html>

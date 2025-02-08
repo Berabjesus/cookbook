@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Food to Pantry</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Cookbook</a>
+    <a href="/auth/signout">Sign out</a>
+  </nav>
+
+  <h1>Add Food to Pantry</h1>
+
+  <form action="/users/<%= userId %>/foods" method="post">
+    <label for="name">Food Name</label>
+    <input type="text" name="name" id="name">
+
+    <label for="quantity">Quantity</label>
+    <input type="number" name="quantity" id="quantity">
+
+    <button type="submit">Add Food</button>
+    
+
+  </form>
+</body>
+</html>
