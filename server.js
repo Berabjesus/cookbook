@@ -27,6 +27,8 @@ app.use(
   })
 );
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => { 
   const user = req.session.user;
   res.render('index.ejs', {user});
